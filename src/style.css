@@ -1,0 +1,21 @@
+/* Remove scrollbar */
+.no-scrollbar {
+    overflow: hidden; /* Disables scrolling */
+  }
+  
+  /* Optional: Disable resizing if not needed */
+  .no-scrollbar {
+    resize: none;
+  }
+  
+  /* Chrome, Safari, Edge, Opera */
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Hides the spinners */
+  margin: 0; /* Ensures proper alignment */
+}
+
+/* Firefox */
+.no-spinners[type='number'] {
+  -moz-appearance: textfield; /* Hides the spinners */
+}

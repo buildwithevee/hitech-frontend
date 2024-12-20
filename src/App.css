@@ -1,0 +1,53 @@
+/* Add this to your App.css or a dedicated CSS file */
+
+.sidebar {
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-open {
+  width: 15rem; /* Adjust as needed */
+
+}
+
+.sidebar-closed {
+  width: 4rem; /* Adjust as needed */
+}
+
+.custom-dashed-border {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #022213;
+  border-image: linear-gradient(to right, #022213 30%, transparent 30%, transparent 70%, #022213 70%) 1;
+  border-image-slice: 1;
+}
+
+
+/* For small devices */
+@media (max-width: 767px) {
+  .sidebar-closed {
+    opacity: 0; /* No opacity on small devices */
+  }
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-text {
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure text is hidden on small devices */
+@media (max-width: 767px) {
+  .sidebar-text {
+    display: none;
+  }
+}

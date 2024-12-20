@@ -1,0 +1,26 @@
+/* Custom Styling for SweetAlert2 */
+
+.custom-title {
+    color: #ffffff !important; /* White text color */
+  }
+  
+  .custom-popup {
+    background-color: #1e1f20 !important; /* Dark popup background */
+    border: 2px solid #282a2c !important; /* Border with #282a2c */
+  }
+  
+  .custom-input {
+    background-color: #282a2c !important; /* Darker input background */
+    color: #ffffff !important; /* White text */
+    border: 1px solid #1e1f20 !important; /* Border */
+  }
+  
+  .custom-confirm-button {
+    background-color: #15803d !important; /* Confirm button background */
+    color: #ffffff !important; /* White text color */
+    border-radius: 5px;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+  }
+  
