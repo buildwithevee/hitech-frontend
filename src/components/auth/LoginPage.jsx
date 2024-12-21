@@ -4,6 +4,7 @@ import './LoginPage.css'; // Assuming you have a separate CSS file for custom st
 
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { apiBaseUrl } from '../../config/constant';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const LoginPage = () => {
         e.preventDefault();
 
         if (email && password) {
-            const response = await axios.post('http://localhost:3000/api/auth/login', { email, password });
+            const response = await axios.post(`${apiBaseUrl}/auth/login`, { email, password });
 
 
 
