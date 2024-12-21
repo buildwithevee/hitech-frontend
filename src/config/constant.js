@@ -1,1 +1,1 @@
-export const apiBaseUrl = "https://hitechengineeringcompany.in/"
+export const apiBaseUrl = "https://hitechengineeringcompany.in/api"
