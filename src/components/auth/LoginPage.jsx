@@ -14,25 +14,44 @@ const LoginPage = () => {
         e.preventDefault();
 
         if (email && password) {
-            const response = await axios.post(`${apiBaseUrl}/auth/login`, { email, password });
+            try {
+                const response = await axios.post(`${apiBaseUrl}/auth/login`, { email, password });
 
+                if (response.data?.success) {
+                    localStorage.setItem("token", response?.data?.data?.token);
+                    Swal.fire({
+                        title: 'Login Successful',
+                        text: 'Welcome back!',
+                        icon: 'success',
+                        background: '#1e1f20',
+                        color: '#ffffff',
+                        confirmButtonColor: '#3890d8',
+                    });
+                    window.location.reload();
+                } else {
+                    Swal.fire({
+                        title: 'Login Failed',
+                        text: response?.data.message || 'Invalid credentials',
+                        icon: 'error',
+                        background: '#1e1f20',
+                        color: '#ffffff',
+                        confirmButtonColor: '#d65f63',
+                    });
+                }
+            } catch (error) {
+                // Handle different types of errors
+                let errorMessage = 'Something went wrong. Please try again later.';
+                if (error.response) {
+                    // Server responded with a status other than 2xx
+                    errorMessage = error.response.data?.message || `Error: ${error.response.status}`;
+                } else if (error.request) {
+                    // Request was made but no response was received
+                    errorMessage = 'No response from the server. Please check your internet connection.';
+                }
 
-
-            if (response.data?.success) {
-                localStorage.setItem("token", response?.data?.data?.token);
                 Swal.fire({
-                    title: 'Login Successful',
-                    text: 'Welcome back!',
-                    icon: 'success',
-                    background: '#1e1f20',
-                    color: '#ffffff',
-                    confirmButtonColor: '#3890d8',
-                });
-                window.location.reload()
-            } else {
-                Swal.fire({
-                    title: 'Login Failed',
-                    text: response?.data.message || 'Invalid credentials',
+                    title: 'Error',
+                    text: errorMessage,
                     icon: 'error',
                     background: '#1e1f20',
                     color: '#ffffff',
@@ -50,6 +69,7 @@ const LoginPage = () => {
             });
         }
     };
+
 
     return (
         <div className='whole'>
