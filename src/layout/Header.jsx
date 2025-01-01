@@ -105,7 +105,7 @@ const Header = ({ open, setOpen }) => {
       {/* Search bar, notification, and user profile */}
       <div className="relative flex items-center gap-x-4 lg:gap-x-8 pr-0 sm:pr-2 lg:pr-8">
 
-        {(location.pathname === "/admin/jobcard" || location.pathname === "/admin/pending" || location.pathname === "/admin/returned" || location.pathname === "/admin/completed") && (<div className="flex gap-5 items-center">
+        {(location.pathname === "/admin/jobcard" || location.pathname === "/admin/pending" || location.pathname === "/admin/returned" || location.pathname === "/admin/completed" ||location.pathname==="/admin/billed" || location.pathname==="/a") && (<div className="flex gap-5 items-center">
           <div className="flex items-center gap-2">
             <input type="checkbox" name="" id="" placeholder="warrenty" value={warranty} onChange={() => dispatch(handleWarranty(!warranty))} />
             <div className="text-white">warranty</div>

@@ -308,7 +308,7 @@ const PendingWorks = () => {
                                 <th className="px-6 py-3 text-left font-medium">Customer Name</th>
                                 <th className="px-6 py-3 text-left font-medium">Phone</th>
                                 <th className="px-6 py-3 text-left font-medium">Date</th>
-                                <th className="px-6 py-3 text-left font-medium">Make</th>
+                                <th className="px-6 py-3 text-left font-medium">Jobcard No.</th>
                                 <th className="px-6 py-3 text-left font-medium">Status</th>
                                 <th className="px-6 py-3 text-left font-medium">Worker</th>
                                 <th className="px-6 py-3 text-left font-medium">Actions</th>
@@ -320,7 +320,7 @@ const PendingWorks = () => {
                                     <td className="px-6 py-4 text-white">{jobCard.customerName}</td>
                                     <td className="px-6 py-4 text-white">{jobCard.phoneNumber}</td>
                                     <td className="px-6 py-4 text-white">{new Date(jobCard.InDate).toLocaleDateString()}</td>
-                                    <td className="px-6 py-4 text-white">{jobCard.Make}</td>
+                                    <td className="px-6 py-4 text-white">{jobCard.jobCardNumber}</td>
                                     <td className="px-6 py-4">
                                         <span
                                             className={`px-3 py-1 rounded-full text-white text-sm ${jobCard.jobCardStatus === "Completed"

@@ -27,7 +27,7 @@ const AdminAside = ({ open, setOpen }) => {
     offset: 0,
   });
   const Menus = [
-    { title: "Create Jobcard", path: "/admin/add-jobcard", icon: <BsBagPlusFill /> },
+    { title: "Create Jobcard", path: "/", icon: <BsBagPlusFill /> },
     { title: "Pending", path: "/admin/pending", icon: <MdPendingActions /> },
     { title: "Completed", path: "/admin/completed", icon: <MdIncompleteCircle /> },
     { title: "Billed", path: "/admin/billed", icon: <AiOutlineFileDone /> },
@@ -97,7 +97,7 @@ const AdminAside = ({ open, setOpen }) => {
             <li
 
               key={index}
-              className={`flex rounded-md p-2 pl-4 font-normal cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"} 
+              className={`flex rounded-md pt-3 pr-2 pl-4 font-normal cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 ${Menu.gap ? "mt-8" : "mt-2"} 
             ${location.pathname === Menu.path ? "text-[#d65f63]" : "text-white"}`}
               onClick={handleMenuClick}
             >

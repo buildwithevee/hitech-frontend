@@ -59,12 +59,12 @@ function App() {
               </PrivateRoute>
             }
           >
+            <Route path="/" element={<AddJobCard />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/users" element={<Users />} />
             <Route path="/admin/jobcard" element={<Jobcard />} />
             <Route path="/admin/edit-jobcard/:id" element={<EditJobCardForm />} />
             <Route path="/admin/jobcard/:id" element={<JobCardView />} />
-            <Route path="/admin/add-jobcard" element={<AddJobCard />} />
             <Route path="/admin/pending" element={<AssignWorker />} />
             <Route path="/admin/returned" element={<ReturnedJobCard />} />
             <Route path="/admin/completed" element={<CompletedJobCard />} />
