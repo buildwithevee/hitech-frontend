@@ -123,15 +123,27 @@ const JobCardView = () => {
             </div>}
             <div ref={cardRef} className="max-w-4xl mx-auto my-8 p-6 text-white bg-[#1e2125] shadow-lg rounded-lg border border-gray-700 relative">
                 {/* Header */}
-                <div className="mb-6 flex items-center border-b border-gray-500 pb-4">
-                    <FaTools className="text-blue-500 text-2xl mr-2" />
-                    <h2 className="text-3xl font-bold">Job Card Details</h2>
+                <div className="mb-6 flex items-center justify-between border-b border-gray-500 pb-4">
+                    <div className="flex items-center">
+                        <FaTools className="text-blue-500 text-2xl mr-2" />
+                        <h2 className="text-3xl font-bold">Job Card Details</h2>
+                    </div>
+                    <div>
+                        <MdOutlineDone className="inline-block text-blue-500 mr-2" />
+                        <strong className="uppercase">JC No:</strong> {data?.jobCardNumber || "N/A"}
+                    </div>
                 </div>
 
 
                 {/* Customer Info */}
                 <div className="mb-8">
-                    <h3 className="text-xl font-semibold border-b border-gray-500 pb-2 mb-4 uppercase">Customer Info</h3>
+                    <div className="flex justify-between items-center border-b border-gray-500 pb-4 mb-4">
+                        <h3 className="text-xl font-semibold  uppercase">Customer Info</h3>
+                        <div>
+                            <FaCalendarAlt className="inline-block text-blue-500 mr-2" />
+                            {new Date(data?.InDate).toLocaleDateString()}
+                        </div>
+                    </div>
                     <div className="grid grid-cols-2 gap-6">
                         <div>
                             <FaUser className="inline-block text-blue-500 mr-2" />
@@ -146,15 +158,9 @@ const JobCardView = () => {
                             <FaPhone className="inline-block text-blue-500 mr-2" />
                             <strong className="">Phone:</strong> {data?.phoneNumber || "N/A"}
                         </div>
-                        <div>
-                            <FaCalendarAlt className="inline-block text-blue-500 mr-2" />
-                            <strong className="">In Date:</strong> {new Date(data?.InDate).toLocaleDateString()}
-                        </div>
 
-                        <div>
-                            <MdOutlineDone className="inline-block text-blue-500 mr-2" />
-                            <strong className="uppercase">Job Card Number:</strong> {data?.jobCardNumber || "N/A"}
-                        </div>
+
+
                         {
                             data?.OutDate && <div>
                                 <FaCalendarAlt className="inline-block text-blue-500 mr-2" />

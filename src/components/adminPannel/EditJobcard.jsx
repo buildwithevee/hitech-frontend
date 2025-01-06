@@ -104,19 +104,18 @@ const EditJobCardForm = () => {
         if (!cusAddress) newErrors.cusAddress = "Customer address is required.";
         if (!cusPhone) {
             newErrors.cusPhone = "Customer phone is required.";
-        } else if (!/^\d{10}$/.test(cusPhone)) {
-            newErrors.cusPhone = "Phone number must be 10 digits.";
         }
-        if (!srNo) newErrors.srNo = "Serial number is required.";
+        // if (!srNo) newErrors.srNo = "Serial number is required.";
+        if (!make) newErrors.make = "Make is required.";
         // Add more validation as needed
-
-        if (!rpm || rpm === "") {
-            newErrors.rpm = "RPM is required.";  // Custom error message for rpm field
+        if (!hp && !kva) {
+            newErrors.hpkva = "HP/KVA  is required.";
         }
+        // if (!rpm || rpm === "") {
+        //   newErrors.rpm = "RPM is required.";  // Custom error message for rpm field
+        // }
         return newErrors;
     };
-
-
     const onSubmitCard = async (e) => {
         setErrors({})
         e.preventDefault();

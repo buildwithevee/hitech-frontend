@@ -103,8 +103,6 @@ const JobCardForm = () => {
     if (!cusAddress) newErrors.cusAddress = "Customer address is required.";
     if (!cusPhone) {
       newErrors.cusPhone = "Customer phone is required.";
-    } else if (!/^\d{10}$/.test(cusPhone)) {
-      newErrors.cusPhone = "Phone number must be 10 digits.";
     }
     // if (!srNo) newErrors.srNo = "Serial number is required.";
     if (!make) newErrors.make = "Make is required.";
