@@ -111,7 +111,7 @@ const JobCardView = () => {
                 </button>
             </div>
         </div>
-            {data?.jobCardStatus === "Pending" && <div className="relative top-0 right-0">
+            {(data?.jobCardStatus === "Pending" || data?.jobCardStatus === "Completed") && <div className="relative top-0 right-0">
                 <div className="text-center mt-4">
                     <button
                         onClick={() => navigate(`/admin/edit-jobcard/${id}`)}
