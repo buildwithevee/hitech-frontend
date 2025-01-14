@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import { toast } from "react-hot-toast";
 import { GoPlusCircle } from "react-icons/go";
@@ -13,6 +13,8 @@ const AddImages = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
     const [jobCardData, setJobCardData] = useState({});
+    const location = useLocation();
+    const state = location.state;
 
 
     const { id } = useParams();
@@ -280,13 +282,17 @@ const AddImages = () => {
 
                     {/* Buttons */}
                     <div className="flex items-center lg:justify-end justify-center space-x-4 mt-6">
-                        <button
+                        {state.type === "cancel" ? <div type="button"
+                            className="sm:px-12 px-8 py-1 sm:py-2 border border-[#d65f63] rounded-lg text-[#d65f63] font-medium hover:bg-[#d65f63] transition duration-300 hover:text-white"
+                            onClick={() => navigate(-1)}>
+                            Cancel
+                        </div> : <button
                             type="button"
                             className="sm:px-12 px-8 py-1 sm:py-2 border border-[#d65f63] rounded-lg text-[#d65f63] font-medium hover:bg-[#d65f63] transition duration-300 hover:text-white"
                             onClick={handleSkip}
                         >
                             Skip
-                        </button>
+                        </button>}
                         <button
                             type="submit"
                             onClick={(e) => handleUpload(e)}

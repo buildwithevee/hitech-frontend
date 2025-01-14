@@ -111,16 +111,28 @@ const JobCardView = () => {
                 </button>
             </div>
         </div>
-            {(data?.jobCardStatus === "Pending" || data?.jobCardStatus === "Completed") && <div className="relative top-0 right-0">
-                <div className="text-center mt-4">
-                    <button
-                        onClick={() => navigate(`/admin/edit-jobcard/${id}`)}
-                        className="bg-red-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-                    >
-                        Edit Jobcard
-                    </button>
-                </div>
-            </div>}
+            <div className="flex gap-2 justify-center">
+                {(data?.jobCardStatus === "Pending" || data?.jobCardStatus === "Completed" || data?.jobCardStatus === "Created") && <div className="relative top-0 right-0">
+                    <div className="text-center mt-4">
+                        <button
+                            onClick={() => navigate(`/admin/edit-jobcard/${id}`)}
+                            className="bg-red-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+                        >
+                            Edit Jobcard
+                        </button>
+                    </div>
+                </div>}
+                {(data?.jobCardStatus === "Created" || data?.jobCardStatus === "Pending" || data?.jobCardStatus === "Completed") && <div>
+                    <div className="text-center mt-4">
+                        <button
+                            onClick={() => navigate(`/admin/complete-jobcard/${id}`, { state: { type: "cancel" } })}
+                            className="bg-red-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+                        >
+                            Add Images
+                        </button>
+                    </div>
+                </div>}
+            </div>
             <div ref={cardRef} className="max-w-4xl mx-auto my-8 p-6 text-white bg-[#1e2125] shadow-lg rounded-lg border border-gray-700 relative">
                 {/* Header */}
                 <div className="mb-6 flex items-center justify-between border-b border-gray-500 pb-4">
