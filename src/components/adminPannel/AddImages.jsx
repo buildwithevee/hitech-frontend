@@ -282,7 +282,7 @@ const AddImages = () => {
 
                     {/* Buttons */}
                     <div className="flex items-center lg:justify-end justify-center space-x-4 mt-6">
-                        {state.type === "cancel" ? <div type="button"
+                        {state?.type === "cancel" ? <div type="button"
                             className="sm:px-12 px-8 py-1 sm:py-2 border border-[#d65f63] rounded-lg text-[#d65f63] font-medium hover:bg-[#d65f63] transition duration-300 hover:text-white"
                             onClick={() => navigate(-1)}>
                             Cancel

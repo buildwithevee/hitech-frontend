@@ -152,7 +152,7 @@ const JobCardForm = () => {
 
       if (response?.status === 201) {
         toast.success("Job card created successfully");
-        navigate(`/admin/complete-jobcard/${response?.data?.data?._id}`);
+        navigate(`/admin/complete-jobcard/${response?.data?.data?._id}`, { state: { type: "add-image" } });
       }
     } catch (error) {
       console.error("Error while submitting:", error);
